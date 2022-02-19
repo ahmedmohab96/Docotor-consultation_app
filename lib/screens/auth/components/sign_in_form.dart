@@ -1,6 +1,7 @@
+// ignore_for_file: unused_field, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-
 import '../../../constants.dart';
 import 'sign_up_form.dart';
 
@@ -12,7 +13,7 @@ class SignInForm extends StatelessWidget {
 
   final GlobalKey formKey;
 
-  late String _email, _password;
+  String? _email, _password;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class SignInForm extends StatelessWidget {
             obscureText: true,
             decoration: InputDecoration(hintText: "******"),
             validator: passwordValidator,
-            onSaved: (password) => _password = password!,
+            onSaved: (password) => _password = password,
           ),
           const SizedBox(height: defaultPadding),
         ],

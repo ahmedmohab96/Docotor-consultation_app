@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -11,7 +13,7 @@ class SignUpForm extends StatelessWidget {
 
   final GlobalKey formKey;
 
-  late String _userName, _email, _password, _phoneNumber;
+  String? _userName, _email, _password, _phoneNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class SignUpForm extends StatelessWidget {
 
             decoration: InputDecoration(hintText: "******"),
             validator: passwordValidator,
-            onSaved: (password) => _password = password!,
+            onSaved: (password) => _password = password,
             // We also need to validate our password
             // Now if we type anything it adds that to our password
             onChanged: (pass) => _password = pass,
@@ -68,7 +70,7 @@ class SignUpForm extends StatelessWidget {
             decoration: InputDecoration(hintText: "*****"),
             validator: (pass) =>
                 MatchValidator(errorText: "Password do not  match")
-                    .validateMatch(pass!, _password),
+                    .validateMatch(pass!, _password!),
           ),
         ],
       ),

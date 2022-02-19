@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class SearchDoctor {
   final String? image, name, speciality, time, hospitalName;
 

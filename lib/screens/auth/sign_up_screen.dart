@@ -1,7 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-
 import '../../constants.dart';
 import 'components/sign_up_form.dart';
 import 'sign_in_screen.dart';
